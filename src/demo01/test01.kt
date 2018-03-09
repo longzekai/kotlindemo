@@ -82,6 +82,22 @@ fun main(args: Array<String>) {
 		return  null
 	}
 
+	// this is ok
+	fun getStringLength1(obj: Any): Int? {
+		if (obj !is String) {
+			return  null
+		}
+		return obj.length
+	}
+
+	// this is right too!
+	fun getStringLength2(obj: Any): Int? {
+		if (obj is String && obj.length > 0) {
+			return obj.length
+		}
+		return  null
+	}
+
 	println("Danny length is:"+getStringLength("danny"))
 }
 
