@@ -97,8 +97,53 @@ fun main(args: Array<String>) {
 		}
 		return  null
 	}
-
 	println("Danny length is:"+getStringLength("danny"))
+	println("=======================区间======================")
+//	区间表达式由具有操作符形式 .. 的 rangeTo 函数辅以 in 和 !in 形成。
+//	区间是为任何可比较类型定义的，但对于整型原生类型，它有一个优化的实现。
+	for (i in 1..4) {
+		print("$i,")
+		if (i in 1..10) { // 等同于 1 <= i && i <= 10
+			print("$i \n")
+		}
+	}
+
+	for (i in 4..1) {
+		println("is nothing..")
+	}
+
+	// 使用 step 指定步长
+	for (i in 1..4 step 2) {
+		print("$i,")
+	}
+
+	for (i in 4 downTo 1 step 2) {
+		print("$i,")
+	}
+
+	println()
+
+	//使用 until 函数排除结束元素
+	for (i in 1 until 10) {
+		println(i)
+	}
+
+	println("=======================实例测试======================")
+	print("循环输出：")
+	for (i in 1..4) print(i) // 输出“1234”
+	println("\n----------------")
+	print("设置步长：")
+	for (i in 1..4 step 2) print(i) // 输出“13”
+	println("\n----------------")
+	print("使用 downTo：")
+	for (i in 4 downTo 1 step 2) print(i) // 输出“42”
+	println("\n----------------")
+	print("使用 until：")
+	// 使用 until 函数排除结束元素
+	for (i in 1 until 4) {   // i in [1, 4) 排除了 4
+		print(i)
+	}
+	println("\n----------------")
 }
 
 
